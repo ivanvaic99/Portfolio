@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>O meni — Ivan Vaić</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="../"><strong>IV</strong> Ivan Vaić</a>
+    <nav><ul class="nav-list">
+      <li><a class="chip" href="../#projects">Projekti</a></li>
+      <li><a class="chip" href="../usluge/">Usluge</a></li>
+      <li><a class="chip" href="../#contact">Kontakt</a></li>
+    </ul></nav>
+    <div class="actions"><a class="btn" href="../cv/">CV</a></div>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <h1>O meni</h1>
+    <p class="lead">Frontend početnik fokusiran na čist dizajn, responzivan kod i UI/UX detalje. Volim da pravim male, brze i korisne alate u čistom JavaScript-u.</p>
+    <div class="chip-row" style="margin-top:10px">
+      <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript (ES6+)</span>
+      <span class="chip">Git/GitHub</span><span class="chip">Figma</span>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Ivan Vaić</div>
+    <div class="chip-row">
+      <a class="chip" href="../#projects">Projekti</a>
+      <a class="chip" href="../usluge/">Usluge</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body></html>
