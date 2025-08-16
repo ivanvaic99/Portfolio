@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pomodoro</title>
+<style>
+body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:#0b0b0c;color:#f7f7f7;display:grid;place-items:center;min-height:100vh}
+.card{width:min(520px,92vw);background:#121214;border:1px solid #1f1f22;border-radius:16px;padding:18px;text-align:center}
+.time{font-size:64px;font-weight:900;margin:10px 0}
+.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+button,select{border:1px solid #2a2a2e;background:#0f0f11;color:#fff;padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:800}
+</style></head>
+<body>
+<div class="card">
+  <h1>Pomodoro</h1>
+  <div class="time" id="t">25:00</div>
+  <div class="row">
+    <button id="start">Start</button>
+    <button id="pause">Pauza</button>
+    <button id="reset">Reset</button>
+    <select id="len">
+      <option value="25">25 min</option>
+      <option value="15">15 min</option>
+      <option value="5">5 min</option>
+    </select>
+  </div>
+</div>
+<script>
+let sec=1500, timer=null;
+const out=document.getElementById('t'); const sel=document.getElementById('len');
+function fmt(s){const m=Math.floor(s/60); const r=String(s%60).padStart(2,'0'); return m+':'+r;}
+function tick(){sec--; if(sec<=0){clearInterval(timer); timer=null; alert('Vreme!');} out.textContent=fmt(sec);}
+document.getElementById('start').onclick=()=>{ if(!timer) timer=setInterval(tick,1000); };
+document.getElementById('pause').onclick=()=>{ clearInterval(timer); timer=null; };
+document.getElementById('reset').onclick=()=>{ sec=parseInt(sel.value,10)*60; out.textContent=fmt(sec); };
+sel.onchange=()=>{ sec=parseInt(sel.value,10)*60; out.textContent=fmt(sec); };
+out.textContent=fmt(sec);
+</script>
+</body></html>
