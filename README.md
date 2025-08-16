@@ -1,7 +1,7 @@
 
 # Ivan Vaić — Portfolio
 
-Nike‑inspirisan, brz i responzivan lični portfolio: sticky header, čiste kartice, hero sekcija, lista projekata, sekcija „O meni“ i kontakt.
+Inspirisan, brz i responzivan lični portfolio: sticky header, čiste kartice, hero sekcija, lista projekata, sekcija „O meni“ i kontakt.
 Repo je spreman za **GitHub Pages** deploy.
 
 ## ✨ Funkcije
