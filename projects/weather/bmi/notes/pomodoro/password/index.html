@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Password Generator</title>
+<style>
+body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:#0b0b0c;color:#f7f7f7;display:grid;place-items:center;min-height:100vh}
+.card{width:min(520px,92vw);background:#121214;border:1px solid #1f1f22;border-radius:16px;padding:18px}
+label{display:block;margin:8px 0;color:#b1b1b1}
+input[type=range]{width:100%}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.out{font-family:ui-monospace, Menlo, monospace;border:1px solid #2a2a2e;background:#0f0f11;border-radius:10px;padding:10px;word-break:break-all}
+button{border:1px solid #2a2a2e;background:#0f0f11;color:#fff;padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:800}
+</style></head>
+<body>
+<div class="card">
+  <h1>Password Generator</h1>
+  <label>Dužina: <span id="lenlab">16</span></label>
+  <input id="len" type="range" min="8" max="64" value="16">
+  <div class="row">
+    <label><input type="checkbox" id="upper" checked> A-Z</label>
+    <label><input type="checkbox" id="lower" checked> a-z</label>
+    <label><input type="checkbox" id="nums" checked> 0-9</label>
+    <label><input type="checkbox" id="syms"> !@#</label>
+  </div>
+  <div class="out" id="out">Klikni „Generiši“</div>
+  <div class="row" style="margin-top:10px">
+    <button id="gen">Generiši</button>
+    <button id="copy">Kopiraj</button>
+  </div>
+</div>
+<script>
+const U='ABCDEFGHIJKLMNOPQRSTUVWXYZ', L=U.toLowerCase(), N='0123456789', S='!@#$%^&*()_+{}[];:,.?-';
+function gen(len, sets){ let pool=''; sets.forEach(s=>pool+=s); if(!pool) return ''; let res=''; for(let i=0;i<len;i++){res+=pool[Math.floor(Math.random()*pool.length)]} return res; }
+const len=document.getElementById('len'), lab=document.getElementById('lenlab'), out=document.getElementById('out');
+len.oninput=()=> lab.textContent=len.value;
+document.getElementById('gen').onclick=()=>{ const sets=[]; if(upper.checked) sets.push(U); if(lower.checked) sets.push(L); if(nums.checked) sets.push(N); if(syms.checked) sets.push(S); out.textContent=gen(parseInt(len.value,10), sets) || 'Izaberi bar jedan set.'; };
+document.getElementById('copy').onclick=async()=>{ try{ await navigator.clipboard.writeText(out.textContent); alert('Kopirano!'); }catch(e){ alert('Nije uspelo kopiranje.'); } };
+</script>
+</body></html>
