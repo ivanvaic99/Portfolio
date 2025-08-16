@@ -1,12 +1,11 @@
-// Projekti (Portfolio V1 uklonjen). Kartice bez slika, sa gradient zaglavljem.
 const projects=[
- {title:'Weather App',desc:'Prognoza (Open-Meteo API bez ključa)',demo:'./projects/weather/',repo:'#'},
- {title:'BMI Kalkulator',desc:'Indeks telesne mase',demo:'./projects/bmi/',repo:'#'},
- {title:'Notes / Blog Mini',desc:'Beleške u localStorage',demo:'./projects/notes/',repo:'#'},
- {title:'Pomodoro Timer',desc:'Fokus 25/5, pauza, reset',demo:'./projects/pomodoro/',repo:'#'},
- {title:'Password Generator',desc:'Jake lozinke, više setova',demo:'./projects/password/',repo:'#'},
- {title:'Gradient Generator',desc:'CSS linear-gradient',demo:'./projects/gradient/',repo:'#'},
- {title:'Galerija',desc:'CSS Grid galerija',demo:'./projects/gallery/',repo:'#'}
+ {title:'Weather App',desc:'Prognoza (Open-Meteo API bez ključa)',img:'assets/weather.jpg',demo:'./projects/weather/',repo:'#'},
+ {title:'BMI Kalkulator',desc:'Indeks telesne mase',img:'assets/bmi.jpg',demo:'./projects/bmi/',repo:'#'},
+ {title:'Notes / Blog Mini',desc:'Beleške u localStorage',img:'assets/notes.jpg',demo:'./projects/notes/',repo:'#'},
+ {title:'Pomodoro Timer',desc:'Fokus 25/5, pauza, reset',img:'assets/pomodoro.jpg',demo:'./projects/pomodoro/',repo:'#'},
+ {title:'Password Generator',desc:'Jake lozinke, više setova',img:'assets/password.jpg',demo:'./projects/password/',repo:'#'},
+ {title:'Gradient Generator',desc:'CSS linear-gradient',img:'assets/gradient.jpg',demo:'./projects/gradient/',repo:'#'},
+ {title:'Galerija',desc:'CSS Grid galerija',img:'assets/gallery.jpg',demo:'./projects/gallery/',repo:'#'}
 ];
 
 (function(){
@@ -14,9 +13,10 @@ const projects=[
   if(!grid) return;
   grid.innerHTML=projects.map((p)=>`
     <article class="card reveal">
-      <div class="head">${p.title}</div>
+      <div class="thumb" style="background-image:url('${p.img}')"></div>
       <div class="body">
         <div class="meta">Frontend • Vanilla JS</div>
+        <h3 style="margin:0 0 6px">${p.title}</h3>
         <p style="margin:0 0 10px;color:#9aa0aa">${p.desc}</p>
         <div class="links">
           <a class="chip" href="${p.demo}" target="_blank" rel="noopener">Demo</a>
@@ -33,5 +33,5 @@ const io = new IntersectionObserver((entries)=>{
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
 
-// Footer year
+// Year
 const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
