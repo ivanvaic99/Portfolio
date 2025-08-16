@@ -3,139 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Usluge — Ivan Vaić</title>
-  <link rel="stylesheet" href="../styles.css" />
-  <link rel="preload" as="image" href="../assets/logo.svg">
-  <link rel="preload" as="image" href="../assets/project-images/portfolio.jpg">
-
-  <link rel="icon" href="../assets/favicon.ico" sizes="any">
+  <title>Ivan Vaić — Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" as="image" href="assets/portfolio.jpg">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/favicon-192.png">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="../"><img src="../assets/logo.svg" alt="Ivan Vaić logo" style="height:40px"/></a>
+      <a class="logo" href="./"><img src="assets/logo.svg" alt="Ivan Vaić logo" style="height:40px"/></a>
       <nav class="nav">
         <ul class="nav-list">
-          <li><a href="../#projects">Projekti</a></li>
-          <li><a href="./">Usluge</a></li>
-          <li><a href="../o-meni/">O meni</a></li>
-          <li><a href="../#contact">Kontakt</a></li>
+          <li><a href="#projects">Projekti</a></li>
+          <li><a href="usluge/">Usluge</a></li>
+          <li><a href="o-meni/">O meni</a></li>
+          <li><a href="#contact">Kontakt</a></li>
         </ul>
       </nav>
       <div class="actions">
-        <a class="btn linkedin" href="https://www.linkedin.com/in/ivan-vaic" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="../assets/Ivan-Vaic-CV.pdf" target="_blank">CV</a>
+        <a class="btn" href="assets/Ivan-Vaic-CV.pdf" target="_blank">CV</a>
+        <a class="btn" href="https://www.linkedin.com/in/ivan-vaic" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <h1 class="reveal">Usluge</h1>
-      <p class="reveal" style="color:#6b7280">Pristupačne cene skrojene za tržište Srbije — transparentno, bez skrivenih troškova. Idealno za brz start i čistu isporuku.</p>
-      <div class="projects-grid">
-        <article class="card reveal">
-          <div class="thumb" style="background-image:url('../assets/project-images/portfolio.jpg')"></div>
-          <div class="body">
-            <div class="meta">Landing stranica</div>
-            <h3>Web sajt (Landing)</h3>
-            <p>Jednostavna, brza prezentacija sa modernim dizajnom (1 strana, do 5 sekcija).</p>
-            <p><strong>Cena:</strong> 7.500–13.500 RSD</p>
-            <div class="links">
-              <a class="btn primary" href="mailto:ivan.vaic22@gmail.com?subject=Upit%3A%20Landing%20sajt">Zakaži konsultaciju</a>
-            </div>
-          </div>
-        </article>
-        <article class="card reveal">
-          <div class="thumb" style="background-image:url('../assets/project-images/weather.jpg')"></div>
-          <div class="body">
-            <div class="meta">Mini Web App <span style="margin-left:6px" class="badge">Najtraženije</span></div>
-            <h3>Web Aplikacija (Mini)</h3>
-            <p>Forme, validacije, localStorage i API integracije. Do 3 ekrana/modula.</p>
-            <p><strong>Cena:</strong> 14.500–24.900 RSD</p>
-            <div class="links">
-              <a class="btn primary" href="mailto:ivan.vaic22@gmail.com?subject=Upit%3A%20Mini%20Web%20App">Zakaži konsultaciju</a>
-            </div>
-          </div>
-        </article>
-        <article class="card reveal">
-          <div class="thumb" style="background-image:url('../assets/project-images/bmi.jpg')"></div>
-          <div class="body">
-            <div class="meta">UI/UX Dorada</div>
-            <h3>Optimizacija i čistoća</h3>
-            <p>Tipografija, spacing, mobilna optimizacija i Lighthouse poboljšanja.</p>
-            <p><strong>Cena:</strong> 4.900–8.900 RSD</p>
-            <div class="links">
-              <a class="btn primary" href="mailto:ivan.vaic22@gmail.com?subject=Upit%3A%20UI%2FUX%20dorada">Zakaži konsultaciju</a>
-            </div>
-          </div>
-        </article>
+  <main>
+    <section class="hero section">
+      <div class="container">
+        <h1>Portfolio</h1>
+        <p class="lead">Frontend projekti, mini aplikacije i UI/UX dorade.</p>
+        <div class="hero-art reveal"></div>
       </div>
-    
-    <div class="section">
-      <h2 class="reveal">Pricing planovi</h2>
-      <div class="projects-grid">
-        <article class="card reveal" style="position:relative">
-          <div class="body">
-            <div class="meta">Plan</div>
-            <h3>Starter</h3>
-            <p>Landing stranica (do 5 sekcija), responsive, basic SEO, deploy.</p>
-            <ul style="margin:10px 0 0; padding-left:18px; color:#6b7280">
-              <li>1 iteracija izmena</li>
-              <li>GitHub Pages setup</li>
-              <li>Kontakt forma (mailto)</li>
-            </ul>
-            <p class="price"><strong>7.500–13.500 RSD</strong></p>
-            <div class="links">
-              <a class="btn" href="mailto:ivan.vaic22@gmail.com?subject=Upit%3A%20Starter%20plan">Izaberi Starter</a>
-            </div>
-          </div>
-        </article>
-        <article class="card reveal" style="position:relative; outline:2px solid #2563eb; outline-offset:2px">
-          <div class="body">
-            <div class="meta">Plan <span class="badge">Najtraženije</span></div>
-            <h3>Pro</h3>
-            <p>Mini web aplikacija (do 3 ekrana), forme, validacija, localStorage, API bez ključeva.</p>
-            <ul style="margin:10px 0 0; padding-left:18px; color:#6b7280">
-              <li>2 iteracije izmena</li>
-              <li>Performance & a11y dorada</li>
-              <li>Deploy + kratko uputstvo</li>
-            </ul>
-            <p class="price"><strong>14.500–24.900 RSD</strong></p>
-            <div class="links">
-              <a class="btn primary" href="mailto:ivan.vaic22@gmail.com?subject=Upit%3A%20Pro%20plan">Izaberi Pro</a>
-            </div>
-          </div>
-        </article>
-        <article class="card reveal" style="position:relative">
-          <div class="body">
-            <div class="meta">Plan</div>
-            <h3>Polish</h3>
-            <p>UI/UX čišćenje: tipografija, spacing, mobilna optimizacija, Lighthouse tuning.</p>
-            <ul style="margin:10px 0 0; padding-left:18px; color:#6b7280">
-              <li>Audit + preporuke</li>
-              <li>Primena ključnih poboljšanja</li>
-              <li>1 iteracija izmena</li>
-            </ul>
-            <p class="price"><strong>4.900–8.900 RSD</strong></p>
-            <div class="links">
-              <a class="btn" href="mailto:ivan.vaic22@gmail.com?subject=Upit%3A%20Polish%20plan">Izaberi Polish</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
+    </section>
 
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projekti</h2>
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Kontakt</h2>
+        <p>Mail: <a href="mailto:ivan.vaic22@gmail.com">ivan.vaic22@gmail.com</a></p>
+        <p>CV: <a target="_blank" rel="noopener" href="assets/Ivan-Vaic-CV.pdf">Ivan-Vaic-CV.pdf</a></p>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>© <span id="year"></span> Ivan Vaić</div>
-      <div><a href="../#projects">Projekti</a> · <a href="./">Usluge</a> · <a href="../o-meni/">O meni</a></div>
+      <div><a href="#projects">Projekti</a> · <a href="usluge/">Usluge</a> · <a href="o-meni/">O meni</a></div>
     </div>
   </footer>
 
-  <script src="../app.js"></script>
-<a href="mailto:ivan.vaic22@gmail.com" class="hire-me">Hire Me</a>
+  <a href="mailto:ivan.vaic22@gmail.com" class="hire-me">Hire Me</a>
+
+  <script src="app.js?v=fix1"></script>
 </body>
 </html>
