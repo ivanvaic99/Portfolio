@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Usluge — Ivan Vaić</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .pricing{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    @media(max-width:900px){.pricing{grid-template-columns:1fr}}
+    .plan{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+    .plan h3{margin:0 0 6px}
+    .price{font-size:28px;font-weight:900;margin:4px 0 10px}
+    .plan ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
+    .plan.best{outline:2px solid var(--ring)}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="../"><strong>IV</strong> Ivan Vaić</a>
+    <nav><ul class="nav-list">
+      <li><a class="chip" href="../#projects">Projekti</a></li>
+      <li><a class="chip" href="../o-meni/">O meni</a></li>
+      <li><a class="chip" href="../#contact">Kontakt</a></li>
+    </ul></nav>
+    <div class="actions"><a class="btn" href="../cv/">CV</a></div>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <h1>Usluge</h1>
+    <p class="lead">Pristupačne cene za tržište Srbije (početnički rang, ali profesionalan pristup).</p>
+    <div class="pricing">
+      <div class="plan">
+        <h3>Landing stranica</h3>
+        <div class="price">€60–90</div>
+        <ul>
+          <li>Jedna stranica, moderan dizajn</li>
+          <li>Responsive + osnovni SEO</li>
+          <li>Kontakt forma ili mailto</li>
+        </ul>
+      </div>
+      <div class="plan best">
+        <h3>Portfolio / Biz sajt</h3>
+        <div class="price">€120–180</div>
+        <ul>
+          <li>3–5 stranica (Home, O nama, Usluge, Kontakt…)</li>
+          <li>Custom UI, animacije, optimizacija</li>
+          <li>Deploy na GitHub Pages</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h3>Mini aplikacije</h3>
+        <div class="price">€40–70</div>
+        <ul>
+          <li>Pomodoro, kalkulatori, generatori, galerije…</li>
+          <li>Bez backend-a, čist JS</li>
+          <li>Brza isporuka</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Ivan Vaić</div>
+    <div class="chip-row">
+      <a class="chip" href="../#projects">Projekti</a>
+      <a class="chip" href="../o-meni/">O meni</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body></html>
