@@ -1,1 +1,32 @@
-
+<!DOCTYPE html>
+<html lang="sr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gradient Generator</title>
+<style>
+body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;display:grid;grid-template-rows:auto 1fr;min-height:100vh;background:#0b0b0c;color:#f7f7f7}
+header{padding:14px;border-bottom:1px solid #1f1f22}
+main{display:grid;grid-template-columns:360px 1fr;gap:12px;padding:12px}
+.panel{background:#121214;border:1px solid #1f1f22;border-radius:16px;padding:12px}
+.preview{border:1px solid #1f1f22;border-radius:16px}
+input,button{width:100%;padding:10px;border-radius:10px;border:1px solid #2a2a2e;background:#0f0f11;color:#fff;margin:4px 0}
+.code{font-family:ui-monospace, Menlo, monospace;white-space:pre-wrap;background:#0f0f11;border:1px solid #2a2a2e;border-radius:10px;padding:10px}
+@media(max-width:780px){main{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header>🎨 Gradient Generator</header>
+<main>
+  <div class="panel">
+    <label>Boja 1 <input type="color" id="c1" value="#1d4ed8"></label>
+    <label>Boja 2 <input type="color" id="c2" value="#9333ea"></label>
+    <label>Ugao (0–360) <input type="number" id="ang" value="135" min="0" max="360"></label>
+    <button id="apply">Primeni</button>
+    <div class="code" id="css"></div>
+  </div>
+  <div id="prev" class="preview"></div>
+</main>
+<script>
+const prev=document.getElementById('prev'), css=document.getElementById('css');
+function update(){ const a=parseInt(ang.value,10)||0; const g=`linear-gradient(${a}deg, ${c1.value}, ${c2.value})`; prev.style.background=g; css.textContent=`background: ${g};`; }
+document.getElementById('apply').onclick=update; update();
+</script>
+</body></html>
