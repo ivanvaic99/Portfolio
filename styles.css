@@ -1,73 +1,50 @@
-/* === Tema (dark default) === */
 :root{
   --bg:#0b0b0c; --text:#f7f7f7; --muted:#b1b1b1;
   --card:#121214; --line:#1f1f22; --ring:#89b4fa;
-  --chip:#16181d; --chipBorder:#24262b;
-  --accent:#2563eb;
+  --chip:#16181d; --chipBorder:#24262b; --accent:#2563eb;
 }
-:root.light{
-  --bg:#ffffff; --text:#0a0a0a; --muted:#6b7280;
-  --card:#f6f7f9; --line:#e5e7eb; --ring:#111;
-  --chip:#ffffff; --chipBorder:#e5e7eb;
-  --accent:#2563eb;
-}
-*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}
-
-/* Layout */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}
 .container{max-width:1100px;margin:0 auto;padding:0 14px}
 .section{padding:40px 0}
+
+/* Header */
 .site-header{position:sticky;top:0;z-index:50;background:color-mix(in oklab, var(--bg), transparent 15%)}
 .header-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
-.nav-list{display:flex;gap:10px;list-style:none;margin:0;padding:0;white-space:nowrap}
-.nav-list a{color:var(--text);text-decoration:none}
+.logo{color:var(--text);text-decoration:none;font-weight:800}
+.nav-list{display:flex;gap:10px;list-style:none;margin:0;padding:0}
 .actions{display:flex;gap:10px}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--text);cursor:pointer;background:var(--chip)}
-.btn.linkedin{background:linear-gradient(90deg,#0ea5e9,#2563eb);border-color:transparent;color:#fff}
+.btn:hover{border-color:var(--ring)}
 
-/* Chips (oblacići) */
+/* Chips */
 .chip{display:inline-flex;align-items:center;padding:8px 12px;background:var(--chip);border:1px solid var(--chipBorder);border-radius:999px;text-decoration:none;color:var(--text);font-weight:600}
 .chip:hover{border-color:var(--ring)}
 .chip-lg{padding:10px 14px}
 .chip-row{display:flex;flex-wrap:wrap;gap:10px}
 
 /* Hero */
-.hero{padding:22px 0 30px}
 .hero h1{margin:0 0 6px;font-size:36px}
 .hero .lead{color:var(--muted)}
-.hero-art{
-  height:360px;border:1px solid var(--line);border-radius:24px;overflow:hidden;
-  background:url('assets/portfolio.jpg') center/cover no-repeat;
-  animation:float 6s ease-in-out infinite; transform-style:preserve-3d; will-change:transform;
+.hero-placeholder{
+  height:140px;border:1px solid var(--line);border-radius:16px;
+  display:grid;place-items:center;background:linear-gradient(135deg,#11131a,#0c0e12);
 }
-@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
 
-/* Cards / grid */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+/* Projects grid: DVE kolone */
+.projects-grid{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:16px}
+@media(max-width:700px){.projects-grid{grid-template-columns:1fr}}
+
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .2s ease, box-shadow .2s ease}
 .card:hover{transform:translateY(-4px)}
-.thumb{height:160px;background:#0f1115 center/cover no-repeat}
+.card .head{height:52px;display:flex;align-items:center;padding:0 12px;background:linear-gradient(90deg,#0ea5e9,#2563eb);font-weight:800;letter-spacing:.2px}
 .body{padding:12px}
 .meta{color:var(--muted);font-size:12px;margin-bottom:6px}
 
-/* Reveal on scroll */
 .reveal{opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease}
 .reveal.in{opacity:1; transform:none}
 
-/* Skills (ostavljeno za /o-meni) */
-.skills{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-.skill{grid-column:span 6;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
-.skill .label{display:flex;justify-content:space-between;font-weight:700;margin-bottom:8px}
-.bar{height:10px;border-radius:999px;background:#e5e7eb;overflow:hidden;border:1px solid var(--line)}
-.fill{height:100%;width:0; background:linear-gradient(90deg,#0ea5e9,#2563eb)}
-.muted{color:var(--muted)}
-
-/* Footer & floating CTA */
+/* Footer & CTA */
 .site-footer{border-top:1px solid var(--line);padding:20px 0}
 .footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .hire-me{position:fixed;bottom:24px;right:24px;background:var(--accent);color:#fff;font-weight:600;padding:12px 20px;border-radius:32px;box-shadow:0 4px 12px rgba(0,0,0,.2);text-decoration:none;z-index:1000}
-
-/* Responsive */
-@media(max-width:640px){
-  .chip-row{gap:8px}
-  .skill{grid-column:span 12}
-}
