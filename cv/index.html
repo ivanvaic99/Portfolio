@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CV — Ivan Vaić</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    main{max-width:840px;margin:24px auto;padding:0 14px}
+    .cv-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+    .cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .cv-title{font-size:28px;margin:0 0 8px}
+    .cv-sec{margin-top:14px}
+    .cv-sec h3{margin:0 0 6px}
+    .list{margin:8px 0 0;padding-left:18px}
+    .pill-row{display:flex;flex-wrap:wrap;gap:8px}
+    .pill{padding:6px 10px;border:1px solid var(--chipBorder);border-radius:999px}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../"><img src="../assets/logo.svg" alt="Ivan Vaić logo" style="height:40px"/></a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a class="chip" href="../#projects">Projekti</a></li>
+          <li><a class="chip" href="../usluge/">Usluge</a></li>
+          <li><a class="chip" href="../o-meni/">O meni</a></li>
+          <li><a class="chip" href="../#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <a class="btn" href="../assets/Ivan-Vaic-CV.pdf" target="_blank">Preuzmi PDF</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="cv-card">
+      <h1 class="cv-title">Ivan Vaić</h1>
+      <div class="pill-row">
+        <span class="pill">Frontend Developer (Junior)</span>
+        <a class="pill" href="mailto:ivan.vaic22@gmail.com">✉️ ivan.vaic22@gmail.com</a>
+        <span class="pill">📞 0691999125</span>
+        <span class="pill">Beograd, Srbija</span>
+        <a class="pill" href="https://www.linkedin.com/in/ivan-vaic" target="_blank">LinkedIn</a>
+        <a class="pill" href="https://github.com/ivanvaic99" target="_blank">GitHub</a>
+      </div>
+
+      <div class="cv-sec">
+        <h3>Profil</h3>
+        <p>Motivisan i odgovoran početnik u IT-u, fokusiran na frontend development. Volim čist dizajn, responzivan kod i rad u timu. Cilj mi je da doprinesem modernim i funkcionalnim web aplikacijama uz kontinuirano učenje.</p>
+      </div>
+
+      <div class="cv-sec">
+        <h3>Veštine</h3>
+        <div class="cv-grid">
+          <div>
+            <strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), Responsive Design, A11y
+          </div>
+          <div>
+            <strong>Alati:</strong> Git, GitHub, Figma, VS Code, Chrome DevTools
+          </div>
+          <div>
+            <strong>Osnove:</strong> React (osnove), TypeScript (osnove), SEO osnove
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-sec">
+        <h3>Projekti</h3>
+        <ul class="list">
+          <li><strong>Weather App</strong> — trenutna prognoza preko Open-Meteo API-ja (bez ključa). Demo: /projects/weather/</li>
+          <li><strong>BMI Kalkulator</strong> — izračunavanje BMI sa kategorizacijom. Demo: /projects/bmi/</li>
+          <li><strong>Blog Notes</strong> — mini beleške u localStorage. Demo: /projects/notes/</li>
+          <li><strong>Pomodoro</strong> — fokus 25/5, pauza, reset. Demo: /projects/pomodoro/</li>
+        </ul>
+      </div>
+
+      <div class="cv-sec">
+        <h3>Obrazovanje</h3>
+        <p>Samostalno učenje frontenda kroz kurseve i tutorijale: HTML/CSS/JS osnove, Git/GitHub; u toku React i TypeScript osnove.</p>
+      </div>
+
+      <div class="cv-sec">
+        Dostupan odmah za razgovor i početak rada.
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Ivan Vaić</div>
+      <div class="chip-row">
+        <a class="chip" href="../#projects">Projekti</a>
+        <a class="chip" href="../usluge/">Usluge</a>
+        <a class="chip" href="../o-meni/">O meni</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
