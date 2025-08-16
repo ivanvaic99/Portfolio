@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="sr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notes / Blog Mini</title>
+<style>
+body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:#0b0b0c;color:#f7f7f7;display:grid;place-items:center;min-height:100vh}
+.card{width:min(720px,92vw);background:#121214;border:1px solid #1f1f22;border-radius:16px;padding:18px}
+.row{display:flex;gap:6px}
+input,textarea,button{padding:10px;border-radius:12px;border:1px solid #2a2a2e;background:#0f0f11;color:#fff}
+input,textarea{width:100%}
+button{cursor:pointer;font-weight:800}
+.note{background:#0f0f11;border:1px solid #2a2a2e;border-radius:12px;padding:10px;margin:8px 0}
+</style></head>
+<body>
+<div class="card">
+  <h1>Notes / Blog Mini</h1>
+  <div class="row"><input id="title" placeholder="Naslov"><button id="add">Dodaj</button></div>
+  <textarea id="body" rows="4" placeholder="Tekst..."></textarea>
+  <div id="list"></div>
+</div>
+<script>
+const KEY='notes_v1';
+function load(){return JSON.parse(localStorage.getItem(KEY)||'[]')}
+function save(arr){localStorage.setItem(KEY, JSON.stringify(arr))}
+function render(){
+  const list=document.getElementById('list'); const arr=load();
+  list.innerHTML = arr.map((n,i)=>`<div class="note"><strong>${n.t}</strong><p>${n.b}</p>
+    <button onclick="del(${i})">Obriši</button></div>`).join('');
+}
+function del(i){const a=load(); a.splice(i,1); save(a); render();}
+document.getElementById('add').onclick=()=>{
+  const t=title.value.trim(), b=body.value.trim(); if(!t||!b) return;
+  const a=load(); a.unshift({t,b,ts:Date.now()}); save(a); title.value=''; body.value=''; render();
+};
+render();
+</script>
+</body></html>
