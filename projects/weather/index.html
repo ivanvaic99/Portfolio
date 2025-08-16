@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="sr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weather App</title>
+<style>
+body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:#0b0b0c;color:#f7f7f7;display:grid;place-items:center;min-height:100vh}
+.card{width:min(720px,92vw);background:#121214;border:1px solid #1f1f22;border-radius:16px;padding:18px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+input,button{padding:10px 12px;border-radius:12px;border:1px solid #2a2a2e;background:#0f0f11;color:#fff}
+button{cursor:pointer;font-weight:800}
+.info{margin-top:10px}
+</style></head>
+<body>
+<div class="card">
+  <h1>Weather App</h1>
+  <div class="row">
+    <input id="q" placeholder="Grad (npr. Beograd)" value="Beograd">
+    <button id="go">Traži</button>
+  </div>
+  <div id="out" class="info"></div>
+</div>
+<script>
+async function geocode(name){
+  const u=`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(name)}&count=1&language=sr`;
+  const r=await fetch(u); const j=await r.json();
+  if(!j.results||!j.results.length) throw new Error('Nije pronađeno');
+  return j.results[0]; // {latitude, longitude, name, country}
+}
+async function weather(lat, lon){
+  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`;
+  const r=await fetch(u); return r.json();
+}
+async function run(){
+  const out=document.getElementById('out'); out.textContent='Učitavanje...';
+  try{
+    const g=await geocode(document.getElementById('q').value.trim());
+    const w=await weather(g.latitude, g.longitude);
+    const c=w.current_weather;
+    out.innerHTML=`<p><strong>${g.name}, ${g.country}</strong></p>
+      <p>Temperatura: ${c.temperature}°C</p>
+      <p>Vetar: ${c.windspeed} km/h</p>
+      <p>Vreme: kod ${c.weathercode}</p>`;
+  }catch(e){ out.textContent='Greška: '+e.message; }
+}
+document.getElementById('go').onclick=run; run();
+</script>
+</body></html>
