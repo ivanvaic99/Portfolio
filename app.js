@@ -1,18 +1,18 @@
 const projects=[
- {title:'Weather App',desc:'Prognoza sa Open‑Meteo API‑jem (bez ključa)',img:'assets/thumbnails/weather.jpg',demo:'./projects/weather/',repo:'#'},
- {title:'BMI Kalkulator',desc:'Izračun BMI sa kategorizacijom',img:'assets/thumbnails/bmi.jpg',demo:'./projects/bmi/',repo:'#'},
- {title:'Notes / Blog Mini',desc:'Lokalne beleške (localStorage)',img:'assets/thumbnails/notes.jpg',demo:'./projects/notes/',repo:'#'},
- {title:'Pomodoro Timer',desc:'Fokus tehnika 25/5, clean UI',img:'assets/thumbnails/pomodoro.jpg',demo:'./projects/pomodoro/',repo:'#'},
- {title:'Password Generator',desc:'Jaki lozinke, više setova',img:'assets/thumbnails/password.jpg',demo:'./projects/password/',repo:'#'},
- {title:'Gradient Generator',desc:'Kreiraj CSS linear‑gradient',img:'assets/thumbnails/gradient.jpg',demo:'./projects/gradient/',repo:'#'},
- {title:'Galerija',desc:'CSS Grid galerija sa captionima',img:'assets/thumbnails/gallery.jpg',demo:'./projects/gallery/',repo:'#'},
+ {title:'Weather App',desc:'Prognoza sa Open‑Meteo API‑jem (bez ključa)',img:'assets/weather.jpg',demo:'./projects/weather/',repo:'#'},
+ {title:'BMI Kalkulator',desc:'Izračun BMI sa kategorizacijom',img:'assets/bmi.jpg',demo:'./projects/bmi/',repo:'#'},
+ {title:'Notes / Blog Mini',desc:'Lokalne beleške (localStorage)',img:'assets/notes.jpg',demo:'./projects/notes/',repo:'#'},
+ {title:'Pomodoro Timer',desc:'Fokus tehnika 25/5, clean UI',img:'assets/pomodoro.jpg',demo:'./projects/pomodoro/',repo:'#'},
+ {title:'Password Generator',desc:'Jaki lozinke, više setova',img:'assets/password.jpg',demo:'./projects/password/',repo:'#'},
+ {title:'Gradient Generator',desc:'Kreiraj CSS linear‑gradient',img:'assets/gradient.jpg',demo:'./projects/gradient/',repo:'#'},
+ {title:'Galerija',desc:'CSS Grid galerija sa captionima',img:'assets/gallery.jpg',demo:'./projects/gallery/',repo:'#'},
  {title:'Portfolio V1',desc:'Prva verzija portfolija (eksterni link)',img:'assets/project-images/portfolio.jpg',demo:'https://ivanvaic99.github.io/Portfolio/',repo:'https://github.com/ivanvaic99/Portfolio'}
 ];
 
 const projects=[
- {title:'Weather App',desc:'Prognoza sa Open‑Meteo API‑jem (bez ključa)',img:'assets/thumbnails/weather.jpg',demo:'./projects/weather/',repo:'#'},
- {title:'BMI Kalkulator',desc:'Izračun BMI sa kategorizacijom',img:'assets/thumbnails/bmi.jpg',demo:'./projects/bmi/',repo:'#'},
- {title:'Notes / Blog Mini',desc:'Lokalne beleške (localStorage)',img:'assets/thumbnails/notes.jpg',demo:'./projects/notes/',repo:'#'},
+ {title:'Weather App',desc:'Prognoza sa Open‑Meteo API‑jem (bez ključa)',img:'assets/weather.jpg',demo:'./projects/weather/',repo:'#'},
+ {title:'BMI Kalkulator',desc:'Izračun BMI sa kategorizacijom',img:'assets/bmi.jpg',demo:'./projects/bmi/',repo:'#'},
+ {title:'Notes / Blog Mini',desc:'Lokalne beleške (localStorage)',img:'assets/notes.jpg',demo:'./projects/notes/',repo:'#'},
  {title:'Portfolio V1',desc:'Prva verzija portfolija (eksterni link)',img:'assets/project-images/portfolio.jpg',demo:'https://ivanvaic99.github.io/Portfolio/',repo:'https://github.com/ivanvaic99/Portfolio'}
 ];
 
