@@ -16,15 +16,15 @@
       <a class="logo" href="./"><img src="assets/logo.svg" alt="Ivan Vaić logo" style="height:40px"/></a>
       <nav class="nav">
         <ul class="nav-list">
-          <li><a href="#projects">Projekti</a></li>
-          <li><a href="usluge/">Usluge</a></li>
-          <li><a href="o-meni/">O meni</a></li>
-          <li><a href="#contact">Kontakt</a></li>
+          <li><a class="chip" href="#projects">Projekti</a></li>
+          <li><a class="chip" href="usluge/">Usluge</a></li>
+          <li><a class="chip" href="o-meni/">O meni</a></li>
+          <li><a class="chip" href="#contact">Kontakt</a></li>
         </ul>
       </nav>
       <div class="actions">
-        <a class="btn" href="assets/Ivan-Vaic-CV.pdf" target="_blank">CV</a>
-        <a class="btn" href="https://www.linkedin.com/in/ivan-vaic" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="cv/" target="_self">CV</a>
+        <a class="btn linkedin" href="https://www.linkedin.com/in/ivan-vaic" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </header>
@@ -48,8 +48,12 @@
     <section id="contact" class="section">
       <div class="container">
         <h2>Kontakt</h2>
-        <p>Mail: <a href="mailto:ivan.vaic22@gmail.com">ivan.vaic22@gmail.com</a></p>
-        <p>CV: <a target="_blank" rel="noopener" href="assets/Ivan-Vaic-CV.pdf">Ivan-Vaic-CV.pdf</a></p>
+        <div class="chip-row">
+          <a class="chip chip-lg" href="mailto:ivan.vaic22@gmail.com">✉️ ivan.vaic22@gmail.com</a>
+          <a class="chip chip-lg" href="cv/">📄 CV (HTML)</a>
+          <a class="chip chip-lg" href="assets/Ivan-Vaic-CV.pdf" target="_blank">⬇️ CV (PDF)</a>
+        </div>
+        <p class="muted" style="margin-top:10px">PDF ponekad loše renderuje na mobilnom — HTML verzija je čitkija.</p>
       </div>
     </section>
   </main>
@@ -57,12 +61,16 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>© <span id="year"></span> Ivan Vaić</div>
-      <div><a href="#projects">Projekti</a> · <a href="usluge/">Usluge</a> · <a href="o-meni/">O meni</a></div>
+      <div class="chip-row">
+        <a class="chip" href="#projects">Projekti</a>
+        <a class="chip" href="usluge/">Usluge</a>
+        <a class="chip" href="o-meni/">O meni</a>
+      </div>
     </div>
   </footer>
 
   <a href="mailto:ivan.vaic22@gmail.com" class="hire-me">Hire Me</a>
 
-  <script src="app.js?v=fix1"></script>
+  <script src="app.js?v=fix2"></script>
 </body>
 </html>
