@@ -20,7 +20,7 @@ button{cursor:pointer;font-weight:800}
 <script>
 function cat(b){if(b<18.5)return"Neuhranjenost";if(b<25)return"Normalan";if(b<30)return"Prekomerna";return"Gojao/Obezan";}
 document.getElementById('go').onclick=()=>{
-  const kg=+kg.value, cm=+cm.value;
+  const kg=+document.getElementById('kg').value, cm=+document.getElementById('cm').value;
   if(!kg||!cm){out.textContent="Unesi težinu i visinu."; return;}
   const m=cm/100, bmi=(kg/(m*m)); out.textContent=`BMI: ${bmi.toFixed(1)} — ${cat(bmi)}`;
 };
