@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="sr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BMI Kalkulator</title>
+<style>
+body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:#0b0b0c;color:#f7f7f7;display:grid;place-items:center;min-height:100vh}
+.card{width:min(520px,92vw);background:#121214;border:1px solid #1f1f22;border-radius:16px;padding:18px}
+input,button{width:100%;padding:10px;border-radius:12px;border:1px solid #2a2a2e;background:#0f0f11;color:#fff;margin:6px 0}
+button{cursor:pointer;font-weight:800}
+.out{margin-top:8px}
+</style></head>
+<body>
+<div class="card">
+  <h1>BMI Kalkulator</h1>
+  <input id="kg" type="number" placeholder="Težina (kg)">
+  <input id="cm" type="number" placeholder="Visina (cm)">
+  <button id="go">Izračunaj</button>
+  <div id="out" class="out"></div>
+</div>
+<script>
+function cat(b){if(b<18.5)return"Neuhranjenost";if(b<25)return"Normalan";if(b<30)return"Prekomerna";return"Gojao/Obezan";}
+document.getElementById('go').onclick=()=>{
+  const kg=+kg.value, cm=+cm.value;
+  if(!kg||!cm){out.textContent="Unesi težinu i visinu."; return;}
+  const m=cm/100, bmi=(kg/(m*m)); out.textContent=`BMI: ${bmi.toFixed(1)} — ${cat(bmi)}`;
+};
+</script>
+</body></html>
